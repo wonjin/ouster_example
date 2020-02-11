@@ -9,6 +9,7 @@
   <arg name="metadata" default="" doc="override default metadata file for replays"/>
   <arg name="viz" default="false" doc="whether to run a simple visualizer"/>
   <arg name="image" default="false" doc="publish range/intensity/noise image topic"/>
+  <arg name="tf_prefix" default="" doc="namespace for tf transforms"/>
 
   <node pkg="ouster_ros" name="os1_node" type="os1_node" output="screen" required="true">
     <param name="~/lidar_mode" type="string" value="$(arg lidar_mode)"/>
@@ -17,6 +18,7 @@
     <param name="~/os1_udp_dest" value="$(arg os1_udp_dest)"/>
     <param name="~/os1_lidar_port" value="$(arg os1_lidar_port)"/>
     <param name="~/os1_imu_port" value="$(arg os1_imu_port)"/>
+    <param name="~/tf_prefix" value="$(arg tf_prefix)"/>
     <param name="~/metadata" value="$(arg metadata)"/>
   </node>
 
